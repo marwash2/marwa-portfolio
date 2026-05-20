@@ -1,54 +1,39 @@
+import "../styles/Navbar.css";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav style={styles.nav}>
-      <h2 style={styles.logo}>Marwa</h2>
-      <ul style={styles.list}>
+    <nav className="navbar">
+      <h2 className="logo">
+        Marwa<span>.</span>
+      </h2>
+
+      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      <ul className={menuOpen ? "nav-links active" : "nav-links"}>
         <li>
-          <a href="#about" style={styles.link}>
-            About
-          </a>
+          <a href="#about">About</a>
         </li>
+
         <li>
-          <a href="#skills" style={styles.link}>
-            Skills
-          </a>
+          <a href="#skills">Skills</a>
         </li>
+
         <li>
-          <a href="#projects" style={styles.link}>
-            Projects
-          </a>
+          <a href="#projects">Projects</a>
         </li>
+
         <li>
-          <a href="#contact" style={styles.link}>
-            Contact
-          </a>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>
   );
 }
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "20px",
-    backgroundColor: "#111",
-    color: "white",
-  },
-  logo: {
-    margin: 0,
-  },
-  list: {
-    display: "flex",
-    gap: "20px",
-    listStyle: "none",
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-  },
-};
 
 export default Navbar;

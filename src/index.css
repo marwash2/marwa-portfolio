@@ -1,10 +1,76 @@
-html {
-  scroll-behavior: smooth;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 100px 10%;
+}
+.app {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-blob {
+  position: fixed;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.15;
+
+  z-index: -1;
+
+  animation: float 10s infinite ease-in-out;
+}
+
+.blob1 {
+  background: #d4af37;
+
+  top: -100px;
+  left: -100px;
+}
+
+.blob2 {
+  background: #6c63ff;
+
+  bottom: -100px;
+  right: -100px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }

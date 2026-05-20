@@ -1,43 +1,124 @@
 .contact {
-  padding: 80px 20px;
+  padding: 120px 10%;
+  background: #111;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 700px;
+
   text-align: center;
 }
 
-.contact h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
+.contact-container h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  color: #b5b5b5;
+  margin-bottom: 50px;
+  line-height: 1.8;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin: 0 auto;
-  gap: 15px;
+  gap: 20px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  padding: 18px;
+
+  border-radius: 15px;
+
+  color: white;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: 0.3s;
 }
 
-.contact-form textarea {
-  resize: none;
-  height: 120px;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d4af37;
 }
 
 .contact-form button {
-  padding: 12px;
-  background-color: #111;
-  color: white;
+  padding: 16px;
+
   border: none;
+
+  border-radius: 50px;
+
+  background: #d4af37;
+
+  color: black;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
   cursor: pointer;
-  transition: 0.3s ease;
+
+  transition: 0.4s;
 }
 
 .contact-form button:hover {
-  background-color: #333;
+  transform: translateY(-5px);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.social-links a {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  transition: 0.4s;
+}
+
+.social-links a:hover {
+  background: #d4af37;
+  color: black;
+
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 100px 8%;
+  }
+
+  .contact-container h2 {
+    font-size: 2.3rem;
+  }
 }

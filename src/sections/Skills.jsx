@@ -1,19 +1,38 @@
 import "../styles/Skills.css";
 
+const skills = [
+  "React",
+  "Next.js",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
+  "Node.js",
+  "PHP",
+  "SQL",
+  "Git & GitHub",
+];
+
 function Skills() {
   return (
     <section id="skills" className="skills">
-      <h2 className="skills-title">My Skills</h2>
-
-      <div className="skills-container">
-        <div className="skill-card">React</div>
-        <div className="skill-card">Next.js</div>
-        <div className="skill-card">JavaScript</div>
-        <div className="skill-card">HTML</div>
-        <div className="skill-card">CSS</div>
-        <div className="skill-card">PHP</div>
-        <div className="skill-card">SQL</div>
-        <div className="skill-card">Git & GitHub</div>
+      <div
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="skills-title">My Skills</h2>
+        <p className="section-subtitle">
+          Technologies and tools I use to build modern applications.
+        </p>
+        <div className="skills-container">
+          {skills.map((skill, index) => (
+            <div className="skill-card" key={index}>
+              {skill}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
